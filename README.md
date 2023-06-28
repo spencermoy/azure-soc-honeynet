@@ -69,8 +69,8 @@ The initial 24-hour study revealed that the lab was vulnerable to multiple threa
 ## Metrics Before Hardening / Security Controls
 
 The following table shows the metrics we measured in our insecure environment for 24 hours:<br>
-Start Time 2023-06-14 17:04:29<br>
-Stop Time 2023-06-15 17:04:29<br>
+Start Time: 2023-06-14 17:04:29<br>
+Stop Time: 2023-06-15 17:04:29<br>
 
 | Metric                   | Count
 | ------------------------ | -----
@@ -87,8 +87,8 @@ Stop Time 2023-06-15 17:04:29<br>
 ## Metrics After Hardening / Security Controls
 
 The following table shows the metrics we measured in our environment for another 24 hours, but after we have applied security controls:<br>
-Start Time 2023-06-16 15:37<br>
-Stop Time	2023-06-17 15:37<br>
+Start Time: 2023-06-16 15:37<br>
+Stop Time:	2023-06-17 15:37<br>
 
 | Metric                   | Count
 | ------------------------ | -----
@@ -100,7 +100,7 @@ Stop Time	2023-06-17 15:37<br>
 
 ## Results
 
-| Metric                   | Count
+| Metric                   | Change after security environment
 | ------------------------ | -----
 | SecurityEvent            | -86.53%
 | Syslog                   | -99.45%
