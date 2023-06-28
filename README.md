@@ -1,4 +1,4 @@
-# Building a SOC + Honeynet in Azure (Live Traffic)
+![image](https://github.com/spencermoy/azure-soc-honeynet/assets/137566643/fe81a033-9ebe-4417-9f4e-633798e65448)# Building a SOC + Honeynet in Azure (Live Traffic)
 ![infographics](https://github.com/spencermoy/azure-soc-honeynet/assets/137566643/e6d83660-73ad-487f-8356-74e012b705a5)
 
 ## Introduction
@@ -39,17 +39,17 @@ For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL t
 
 ## Metrics Before Hardening / Security Controls
 
-The following table shows the metrics we measured in our insecure environment for 24 hours:
-Start Time 2023-03-15 17:04:29
-Stop Time 2023-03-16 17:04:29
+The following table shows the metrics we measured in our insecure environment for 24 hours:<br>
+Start Time 2023-06-14 17:04:29<br>
+Stop Time 2023-06-15 17:04:29<br>
 
 | Metric                   | Count
 | ------------------------ | -----
-| SecurityEvent            | 19470
-| Syslog                   | 3028
-| SecurityAlert            | 10
-| SecurityIncident         | 348
-| AzureNetworkAnalytics_CL | 843
+| SecurityEvent            | 84500
+| Syslog                   | 4560
+| SecurityAlert            | 36
+| SecurityIncident         | 283
+| NSG Inbound Malicious Flows Allowed | 7456
 
 ## Attack Maps Before Hardening / Security Controls
 
@@ -57,17 +57,27 @@ Stop Time 2023-03-16 17:04:29
 
 ## Metrics After Hardening / Security Controls
 
-The following table shows the metrics we measured in our environment for another 24 hours, but after we have applied security controls:
-Start Time 2023-03-18 15:37
-Stop Time	2023-03-19 15:37
+The following table shows the metrics we measured in our environment for another 24 hours, but after we have applied security controls:<br>
+Start Time 2023-06-16 15:37<br>
+Stop Time	2023-06-17 15:37<br>
 
 | Metric                   | Count
 | ------------------------ | -----
-| SecurityEvent            | 8778
+| SecurityEvent            | 11382
 | Syslog                   | 25
 | SecurityAlert            | 0
 | SecurityIncident         | 0
-| AzureNetworkAnalytics_CL | 0
+| NSG Inbound Malicious Flows Allowed | 0
+
+## Results
+
+| Metric                   | Count
+| ------------------------ | -----
+| SecurityEvent            | -86.53%
+| Syslog                   | -99.45%
+| SecurityAlert            | -100.00%
+| SecurityIncident         | -100.00%
+| NSG Inbound Malicious Flows Allowed | -100.00%
 
 ## Conclusion
 
