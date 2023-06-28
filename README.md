@@ -15,7 +15,7 @@ In this project, I build a mini honeynet in Azure and ingest log sources from va
 ![before_infographics](https://github.com/spencermoy/azure-soc-honeynet/assets/137566643/9b88b108-b3b6-4d84-ac24-2273d217b51c)
 
 ## Architecture After Hardening / Security Controls
-![Architecture Diagram](https://i.imgur.com/YQNa9Pp.jpg)
+![after_infographics](https://github.com/spencermoy/azure-soc-honeynet/assets/137566643/7c0f5e44-8330-4a8f-959d-b9aa57288e10)
 
 The architecture of the mini honeynet in Azure consists of the following components:
 
@@ -32,9 +32,10 @@ For the "BEFORE" metrics, all resources were originally deployed, exposed to the
 For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL traffic with the exception of my admin workstation, and all other resources were protected by their built-in firewalls as well as Private Endpoint
 
 ## Attack Maps Before Hardening / Security Controls
-![NSG Allowed Inbound Malicious Flows](https://i.imgur.com/1qvswSX.png)<br>
-![Linux Syslog Auth Failures](https://i.imgur.com/G1YgZt6.png)<br>
-![Windows RDP/SMB Auth Failures](https://i.imgur.com/ESr9Dlv.png)<br>
+![mssql-auth-fail](https://github.com/spencermoy/azure-soc-honeynet/assets/137566643/e9a0b8dd-65aa-49e2-bd94-b57b976a71a1)<br>
+![nsg-malicious-allowed-in](https://github.com/spencermoy/azure-soc-honeynet/assets/137566643/1e11f511-af05-44dd-bd8c-beeef61528fd)<br>
+![syslog-ssh-auth-fail](https://github.com/spencermoy/azure-soc-honeynet/assets/137566643/bcdea77a-bb67-4d5e-b43a-e881676c027d)<br>
+![windows-rdp-smb-auth-fail](https://github.com/spencermoy/azure-soc-honeynet/assets/137566643/aaba341d-6360-4da2-8695-224ea1d43755)<br>
 
 ## Metrics Before Hardening / Security Controls
 
