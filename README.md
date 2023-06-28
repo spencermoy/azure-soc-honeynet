@@ -11,12 +11,6 @@ In this project, I build a mini honeynet in Azure and ingest log sources from va
 - SecurityIncident (Incidents created by Sentinel)
 - AzureNetworkAnalytics_CL (Malicious Flows allowed into our honeynet)
 
-## Architecture Before Hardening / Security Controls
-![before_infographics](https://github.com/spencermoy/azure-soc-honeynet/assets/137566643/9b88b108-b3b6-4d84-ac24-2273d217b51c)
-
-## Architecture After Hardening / Security Controls
-![after_infographics](https://github.com/spencermoy/azure-soc-honeynet/assets/137566643/7c0f5e44-8330-4a8f-959d-b9aa57288e10)
-
 The architecture of the mini honeynet in Azure consists of the following components:
 
 - Virtual Network (VNet)
@@ -27,9 +21,19 @@ The architecture of the mini honeynet in Azure consists of the following compone
 - Azure Storage Account
 - Microsoft Sentinel
 
-For the "BEFORE" metrics, all resources were originally deployed, exposed to the internet. The Virtual Machines had both their Network Security Groups and built-in firewalls wide open, and all other resources are deployed with public endpoints visible to the Internet; aka, no use for Private Endpoints.
+## Architecture Before Hardening / Security Controls
+![before_infographics](https://github.com/spencermoy/azure-soc-honeynet/assets/137566643/9b88b108-b3b6-4d84-ac24-2273d217b51c)
+For the "BEFORE" metrics, all resources were initially deployed and exposed to the internet. The Virtual Machines had both their Network Security Groups and built-in firewalls wide open, and all other resources are deployed with public endpoints visible to the Internet. This setup did not use Private Endpoints.
+
+## Architecture After Hardening / Security Controls
+![after_infographics](https://github.com/spencermoy/azure-soc-honeynet/assets/137566643/7c0f5e44-8330-4a8f-959d-b9aa57288e10)
 
 For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL traffic with the exception of my admin workstation, and all other resources were protected by their built-in firewalls as well as Private Endpoint
+-	Network Security Groups (NSGs): I hardened the NSGs by blocking all inbound and outbound traffic, with the sole exception of my own public IP address. This ensured that only authorized traffic from a trusted source was allowed to access the virtual machines.
+-	Built-in Firewalls: I configured the built-in firewalls on the virtual machines to restrict access and protect the resources from unauthorized connections. This step involved fine-tuning the firewall rules based on the specific requirements of each VM, thereby minimizing the potential attack surface.
+-	Private Endpoints: To enhance the security of other Azure resources, I replaced the public endpoints with Private Endpoints. This ensured that access to sensitive resources, such as storage accounts and databases, was limited to the virtual network and not exposed to the public internet. As a result, these resources were protected from unauthorized access and potential attacks.
+![image](https://github.com/spencermoy/azure-soc-honeynet/assets/137566643/3d747cdf-ee7e-42a7-9db7-45767ab7aa07)
+
 
 ## Attack Maps Before Hardening / Security Controls
 ![mssql-auth-fail](https://github.com/spencermoy/azure-soc-honeynet/assets/137566643/e9a0b8dd-65aa-49e2-bd94-b57b976a71a1)<br><br>
