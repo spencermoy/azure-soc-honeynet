@@ -53,6 +53,10 @@ For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL t
 
 ## Further Hardending Steps
 The initial 24-hour study revealed that the lab was vulnerable to multiple threats due to its visibility on the public internet. To address these findings, I activated NIST SP 800-53 r4 within the compliance section of Microsoft Defender and focused on fulfilling the compliance standards associated with SC.7.*. Additional assessments for SC-7 - Boundary Protection.
+<b>Before</b>
+![compliance_before](https://github.com/spencermoy/azure-soc-honeynet/assets/137566643/83fd9d84-4cdd-4131-8420-026ba9d1f485)
+<b>After</b>
+![compliance_after](https://github.com/spencermoy/azure-soc-honeynet/assets/137566643/e6b0b94b-3dad-4bbe-9bf5-5985500a503c)
 
 ## Attack Maps Before Hardening / Security Controls
 ![mssql-auth-fail](https://github.com/spencermoy/azure-soc-honeynet/assets/137566643/e9a0b8dd-65aa-49e2-bd94-b57b976a71a1)<br><br>
