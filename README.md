@@ -1,4 +1,4 @@
-# Building a SOC + Honeynet in Azure (Live Traffic)
+![image](https://github.com/spencermoy/azure-soc-honeynet/assets/137566643/448b2ae9-367e-4188-8b60-608f7aa90bba)# Building a SOC + Honeynet in Azure (Live Traffic)
 ![infographics](https://github.com/spencermoy/azure-soc-honeynet/assets/137566643/e6d83660-73ad-487f-8356-74e012b705a5)
 
 ## Introduction
@@ -21,6 +21,14 @@ The architecture of the mini honeynet in Azure consists of the following compone
 - Azure Storage Account
 - Microsoft Sentinel
 
+Technology Used
+-	Windows Remote Desktop (for remoting into the VMs)
+-	SQL Server Installation on the VM 
+- Command Line Interface (for for SQL audit log setup)
+-	Visual Studio Code (for simulated attacks)
+-	PowerShell (for simulated attacks)
+
+
 ## Architecture Before Hardening / Security Controls
 ![before_infographics](https://github.com/spencermoy/azure-soc-honeynet/assets/137566643/9b88b108-b3b6-4d84-ac24-2273d217b51c)
 For the "BEFORE" metrics, all resources were initially deployed and exposed to the internet. The Virtual Machines had both their Network Security Groups and built-in firewalls wide open, and all other resources are deployed with public endpoints visible to the Internet. This setup did not use Private Endpoints.
@@ -32,8 +40,9 @@ For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL t
 -	Network Security Groups (NSGs): I hardened the NSGs by blocking all inbound and outbound traffic, with the sole exception of my own public IP address. This ensured that only authorized traffic from a trusted source was allowed to access the virtual machines.
 -	Built-in Firewalls: I configured the built-in firewalls on the virtual machines to restrict access and protect the resources from unauthorized connections. This step involved fine-tuning the firewall rules based on the specific requirements of each VM, thereby minimizing the potential attack surface.
 -	Private Endpoints: To enhance the security of other Azure resources, I replaced the public endpoints with Private Endpoints. This ensured that access to sensitive resources, such as storage accounts and databases, was limited to the virtual network and not exposed to the public internet. As a result, these resources were protected from unauthorized access and potential attacks.
-![image](https://github.com/spencermoy/azure-soc-honeynet/assets/137566643/3d747cdf-ee7e-42a7-9db7-45767ab7aa07)
 
+## Further Hardending Steps
+The initial 24-hour study revealed that the lab was vulnerable to multiple threats due to its visibility on the public internet. To address these findings, I activated NIST SP 800-53 r4 within the compliance section of Microsoft Defender and focused on fulfilling the compliance standards associated with SC.7.*. Additional assessments for SC-7 - Boundary Protection.
 
 ## Attack Maps Before Hardening / Security Controls
 ![mssql-auth-fail](https://github.com/spencermoy/azure-soc-honeynet/assets/137566643/e9a0b8dd-65aa-49e2-bd94-b57b976a71a1)<br><br>
@@ -85,6 +94,5 @@ Stop Time	2023-06-17 15:37<br>
 
 ## Conclusion
 
-In this project, a mini honeynet was constructed in Microsoft Azure and log sources were integrated into a Log Analytics workspace. Microsoft Sentinel was employed to trigger alerts and create incidents based on the ingested logs. Additionally, metrics were measured in the insecure environment before security controls were applied, and then again after implementing security measures. It is noteworthy that the number of security events and incidents were drastically reduced after the security controls were applied, demonstrating their effectiveness.
+In this project, a mini honeynet was built in Microsoft Azure, and log sources were integrated into a Log Analytics workspace. Microsoft Sentinel was utilized to trigger alerts and create incidents based on the ingested logs. Security metrics were measured in the insecure environment before security controls were applied and then again after implementing security measures. The results showed that the number of security events and incidents were significantly reduced after the security controls were applied, demonstrating their effectiveness. 
 
-It is worth noting that if the resources within the network were heavily utilized by regular users, it is likely that more security events and alerts may have been generated within the 24-hour period following the implementation of the security controls.
