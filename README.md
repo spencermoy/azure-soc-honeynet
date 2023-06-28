@@ -1,4 +1,4 @@
-![image](https://github.com/spencermoy/azure-soc-honeynet/assets/137566643/fe81a033-9ebe-4417-9f4e-633798e65448)# Building a SOC + Honeynet in Azure (Live Traffic)
+# Building a SOC + Honeynet in Azure (Live Traffic)
 ![infographics](https://github.com/spencermoy/azure-soc-honeynet/assets/137566643/e6d83660-73ad-487f-8356-74e012b705a5)
 
 ## Introduction
@@ -32,10 +32,10 @@ For the "BEFORE" metrics, all resources were originally deployed, exposed to the
 For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL traffic with the exception of my admin workstation, and all other resources were protected by their built-in firewalls as well as Private Endpoint
 
 ## Attack Maps Before Hardening / Security Controls
-![mssql-auth-fail](https://github.com/spencermoy/azure-soc-honeynet/assets/137566643/e9a0b8dd-65aa-49e2-bd94-b57b976a71a1)<br>
-![nsg-malicious-allowed-in](https://github.com/spencermoy/azure-soc-honeynet/assets/137566643/1e11f511-af05-44dd-bd8c-beeef61528fd)<br>
-![syslog-ssh-auth-fail](https://github.com/spencermoy/azure-soc-honeynet/assets/137566643/bcdea77a-bb67-4d5e-b43a-e881676c027d)<br>
-![windows-rdp-smb-auth-fail](https://github.com/spencermoy/azure-soc-honeynet/assets/137566643/aaba341d-6360-4da2-8695-224ea1d43755)<br>
+![mssql-auth-fail](https://github.com/spencermoy/azure-soc-honeynet/assets/137566643/e9a0b8dd-65aa-49e2-bd94-b57b976a71a1)<br><br>
+![nsg-malicious-allowed-in](https://github.com/spencermoy/azure-soc-honeynet/assets/137566643/1e11f511-af05-44dd-bd8c-beeef61528fd)<br><br>
+![syslog-ssh-auth-fail](https://github.com/spencermoy/azure-soc-honeynet/assets/137566643/bcdea77a-bb67-4d5e-b43a-e881676c027d)<br><br>
+![windows-rdp-smb-auth-fail](https://github.com/spencermoy/azure-soc-honeynet/assets/137566643/aaba341d-6360-4da2-8695-224ea1d43755)<br><br>
 
 ## Metrics Before Hardening / Security Controls
 
@@ -51,7 +51,7 @@ Stop Time 2023-06-15 17:04:29<br>
 | SecurityIncident         | 283
 | NSG Inbound Malicious Flows Allowed | 7456
 
-## Attack Maps Before Hardening / Security Controls
+## Attack Maps After Hardening / Security Controls
 
 ```All map queries actually returned no results due to no instances of malicious activity for the 24 hour period after hardening.```
 
