@@ -3,8 +3,9 @@
 
 ## Introduction
 
-In this project, I build a mini honeynet in Azure and ingest log sources from various resources into a Log Analytics workspace, which is then used by Microsoft Sentinel to build attack maps, trigger alerts, and create incidents. I measured some security metrics in the insecure environment for 24 hours, apply some security controls to harden the environment, measure metrics for another 24 hours, then show the results below. The metrics we will show are:
+In this project, I build a mini honeynet in Azure and ingest log sources from various resources into a Log Analytics workspace, which is then used by Microsoft Sentinel to build attack maps, trigger alerts, and create incidents. I measured some security metrics in the insecure environment for 24 hours, apply some security controls to harden the environment, measure metrics for another 24 hours, then show the results below. 
 
+The metrics we will show are:
 - SecurityEvent (Windows Event Logs)
 - Syslog (Linux Event Logs)
 - SecurityAlert (Log Analytics Alerts Triggered)
@@ -12,7 +13,6 @@ In this project, I build a mini honeynet in Azure and ingest log sources from va
 - AzureNetworkAnalytics_CL (Malicious Flows allowed into our honeynet)
 
 The architecture of the mini honeynet in Azure consists of the following components:
-
 - Virtual Network (VNet)
 - Network Security Group (NSG)
 - Virtual Machines (2 windows, 1 linux)
@@ -32,6 +32,15 @@ Technology Used
 ## Architecture Before Hardening / Security Controls
 ![before_infographics](https://github.com/spencermoy/azure-soc-honeynet/assets/137566643/9b88b108-b3b6-4d84-ac24-2273d217b51c)
 For the "BEFORE" metrics, all resources were initially deployed and exposed to the internet. The Virtual Machines had both their Network Security Groups and built-in firewalls wide open, and all other resources are deployed with public endpoints visible to the Internet. This setup did not use Private Endpoints.
+
+## Simulated Attacks
+I simulated attacks using Visual Code and PowerShell scripts. The results were observed in log querying in Log Analytics Workspace and investigating incidents in Sentinel.
+-	Linux Brute Force Attempt
+-	AAD Brute Force Success
+-	Windows Brute Force Success
+-	Malware Detection (EICAR Test File)
+-	Privilege Escalation
+
 
 ## Architecture After Hardening / Security Controls
 ![after_infographics](https://github.com/spencermoy/azure-soc-honeynet/assets/137566643/7c0f5e44-8330-4a8f-959d-b9aa57288e10)
