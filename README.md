@@ -5,14 +5,14 @@
 
 In this project, I build a mini honeynet in Azure and ingest log sources from various resources into a Log Analytics workspace, which is then used by Microsoft Sentinel to build attack maps, trigger alerts, and create incidents. I measured some security metrics in the insecure environment for 24 hours, apply some security controls to harden the environment, measure metrics for another 24 hours, then show the results below. 
 
-The metrics we will show are:
+<b>The metrics we will show are:</b>
 - SecurityEvent (Windows Event Logs)
 - Syslog (Linux Event Logs)
 - SecurityAlert (Log Analytics Alerts Triggered)
 - SecurityIncident (Incidents created by Sentinel)
 - AzureNetworkAnalytics_CL (Malicious Flows allowed into our honeynet)
 
-The architecture of the mini honeynet in Azure consists of the following components:
+<b>The architecture of the honeynet consists of:</b>
 - Virtual Network (VNet)
 - Network Security Group (NSG)
 - Virtual Machines (2 windows, 1 linux)
@@ -21,7 +21,7 @@ The architecture of the mini honeynet in Azure consists of the following compone
 - Azure Storage Account
 - Microsoft Sentinel
 
-Technology Used
+<b>The technology used:</b>
 -	Windows Remote Desktop (for remoting into the VMs)
 -	SQL Server Installation on the VM 
 - Command Line Interface (for for SQL audit log setup)
@@ -31,6 +31,7 @@ Technology Used
 
 ## Architecture Before Hardening / Security Controls
 ![before_infographics](https://github.com/spencermoy/azure-soc-honeynet/assets/137566643/9b88b108-b3b6-4d84-ac24-2273d217b51c)
+
 For the "BEFORE" metrics, all resources were initially deployed and exposed to the internet. The Virtual Machines had both their Network Security Groups and built-in firewalls wide open, and all other resources are deployed with public endpoints visible to the Internet. This setup did not use Private Endpoints.
 
 ## Simulated Attacks
