@@ -53,9 +53,10 @@ For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL t
 -	Private Endpoints: To enhance the security of other Azure resources, I replaced the public endpoints with Private Endpoints. This ensured that access to sensitive resources, such as storage accounts and databases, was limited to the virtual network and not exposed to the public internet. As a result, these resources were protected from unauthorized access and potential attacks.
 
 ## Further Hardending Steps
-The initial 24-hour study revealed that the lab was vulnerable to multiple threats due to its visibility on the public internet. To address these findings, I activated NIST SP 800-53 r4 within the compliance section of Microsoft Defender and focused on fulfilling the compliance standards associated with SC.7.*. Additional assessments for SC-7 - Boundary Protection.<br>
+The initial 24-hour study revealed that the lab was vulnerable to multiple threats due to its visibility on the public internet. To address these findings, I activated NIST SP 800-53 r4 within the compliance section of Microsoft Defender and focused on fulfilling the compliance standards associated with SC.7.*. Additional assessments for SC-7 - Boundary Protection.<br><br>
 <b>Before Hardening</b>
 ![compliance_before](https://github.com/spencermoy/azure-soc-honeynet/assets/137566643/83fd9d84-4cdd-4131-8420-026ba9d1f485)
+<br>
 <b>After Hardening</b>
 ![compliance_after](https://github.com/spencermoy/azure-soc-honeynet/assets/137566643/e6b0b94b-3dad-4bbe-9bf5-5985500a503c)
 
